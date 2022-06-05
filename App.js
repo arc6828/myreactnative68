@@ -7,16 +7,19 @@
 // import Health from './screens/week5/Health';
 // import Home from './screens/week6/Home';
 import { NavigationContainer } from '@react-navigation/native';
+import { AuthContextProvider } from './hooks/AuthContextProvider';
 import BottomTab from './navigations/BottomTab';
 import HomeStack from './navigations/HomeStack';
 import RootStack from './navigations/RootStack';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {/* <HomeStack /> */}
-      {/* <BottomTab /> */}
-      <RootStack />
-    </NavigationContainer>
+    <AuthContextProvider>
+      <NavigationContainer>
+        {/* <HomeStack /> */}
+        {/* <BottomTab /> */}
+        <RootStack />
+      </NavigationContainer>
+    </AuthContextProvider>
   );
 }
